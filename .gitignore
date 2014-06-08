@@ -1,3 +1,11 @@
 composer.lock
 composer.phar
 /vendor/
+/bin/
+/.vagrant
+/.idea
+/nbproject/private/
+/.buildpath
+/.metadata
+/.project
+/.settings
