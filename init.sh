@@ -24,8 +24,19 @@ sudo curl -sS https://getcomposer.org/installer | php
 sudo mv composer.phar /usr/local/bin/composer
 
 #
+# install Vim
+#
+sudo apt-get -y install vim
+
+#
 # Install Sphinx
 #
 sudo apt-get -y install sphinxsearch
 sudo chmod 777 /usr/bin/searchd
 sudo chmod 777 /usr/bin/indexer
+sudo chmod 777 /var/log/sphinxsearch
+
+#
+# Create sphinx.conf based on project configs
+#
+echo -e "#!/bin/bash\ncat /vagrant/Workshop/Config/*.conf" > /etc/sphinxsearch/sphinx.conf
