@@ -2,7 +2,6 @@ Sphinx Workshop
 ========
 
 PHP skeleton for doing exercises with SphinxClient API
------------------------------------
 
 Installation Instructions
 =========================
