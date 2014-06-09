@@ -39,4 +39,4 @@ sudo chmod 777 /var/log/sphinxsearch
 #
 # Create sphinx.conf based on project configs
 #
-echo -e "#!/bin/bash\ncat /vagrant/Workshop/Config/*.conf" > /etc/sphinxsearch/sphinx.conf
+echo -e "#!/bin/bash\ncat /vagrant/src/Workshop/Config/*.conf" > /etc/sphinxsearch/sphinx.conf
