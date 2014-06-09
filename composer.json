@@ -1,24 +1,26 @@
 {
-    "name": "kata/php",
-    "description": "PHP Kata skeleton",
-    "keywords": ["kata","TDD"],
-    "homepage": "https://github.com/carlosbuenosvinos/php-kata",
+    "name": "sphinx/workshop",
+    "description": "Sphinx Workshop",
+    "keywords": ["Workshop","Sphinx"],
+    "homepage": "https://github.com/salvador-lopez/sphinx-workshop",
     "type": "library",
-    "require-dev": {
-        "phpunit/phpunit": "3.7.*@dev",
-        "mockery/mockery": "dev-master@dev",
-        "phpspec/phpspec": "2.0.*@dev"
+    "require": {
+        "nilportugues/sphinx-search": "1.0.0"
     },
     "license": "MIT",
     "authors": [
         {
             "name": "Carlos Buenosvinos",
             "email": "hi@carlos.io"
+        },
+        {
+            "name": "Salvador López",
+            "email": "salvador.lopez@atrapalo.com"
         }
     ],
     "autoload": {
         "psr-0": {
-            "Kata": "src/"
+            "Workshop": "src/"
         }
     },
     "config": {
