@@ -28,13 +28,26 @@ sudo mv composer.phar /usr/local/bin/composer
 #
 sudo apt-get -y install vim
 
-#
-# Install Sphinx
-#
-sudo apt-get -y install sphinxsearch
-sudo chmod 777 /usr/bin/searchd
-sudo chmod 777 /usr/bin/indexer
-sudo chmod 777 /var/log/sphinxsearch
+########################################################################
+# INSTALLATION, includes libstemmer because it's the edge repo :D
+########################################################################
+
+echo 'Installing DAILY build of SphinxSearch...'
+
+VERSION_NAME=`cat /etc/lsb-release | grep CODENAME | awk -F '=' '{print $2}'`
+
+if [ $(cat /etc/apt/sources.list | grep "deb http://ppa.launchpad.net/builds/sphinxsearch" | wc -w) = "0" ];
+then
+  echo "deb http://ppa.launchpad.net/builds/sphinxsearch-daily/ubuntu $VERSION_NAME main" >> /etc/apt/sources.list
+fi
+
+if [ $(cat /etc/apt/sources.list | grep "deb-src http://ppa.launchpad.net/builds/sphinxsearch" | wc -w) = "0" ];
+then
+  echo "deb-src http://ppa.launchpad.net/builds/sphinxsearch-daily/ubuntu $VERSION_NAME main" >> /etc/apt/sources.list
+fi  
+
+sudo apt-get update
+sudo apt-get install sphinxsearch mysql-client mysql-server
 
 #
 # Create sphinx.conf based on project configs
