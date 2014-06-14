@@ -1,3 +1,5 @@
+sudo apt-get -y update
+
 #
 # MySQL Configuration
 # Allow us to Remote from Vagrant with Port
@@ -44,10 +46,9 @@ fi
 if [ $(cat /etc/apt/sources.list | grep "deb-src http://ppa.launchpad.net/builds/sphinxsearch" | wc -w) = "0" ];
 then
   echo "deb-src http://ppa.launchpad.net/builds/sphinxsearch-daily/ubuntu $VERSION_NAME main" >> /etc/apt/sources.list
-fi  
+fi
 
-sudo apt-get update
-sudo apt-get install sphinxsearch mysql-client mysql-server
+sudo apt-get -y install sphinxsearch mysql-client mysql-server
 
 #
 # Create sphinx.conf based on project configs
