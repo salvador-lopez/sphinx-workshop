@@ -1,5 +1,3 @@
-sudo apt-get -y update
-
 #
 # MySQL Configuration
 # Allow us to Remote from Vagrant with Port
@@ -36,21 +34,18 @@ sudo apt-get -y install vim
 
 echo 'Installing DAILY build of SphinxSearch...'
 
-VERSION_NAME=`cat /etc/lsb-release | grep CODENAME | awk -F '=' '{print $2}'`
+sudo add-apt-repository ppa:builds/sphinxsearch-rel21
 
-if [ $(cat /etc/apt/sources.list | grep "deb http://ppa.launchpad.net/builds/sphinxsearch" | wc -w) = "0" ];
-then
-  echo "deb http://ppa.launchpad.net/builds/sphinxsearch-daily/ubuntu $VERSION_NAME main" >> /etc/apt/sources.list
-fi
-
-if [ $(cat /etc/apt/sources.list | grep "deb-src http://ppa.launchpad.net/builds/sphinxsearch" | wc -w) = "0" ];
-then
-  echo "deb-src http://ppa.launchpad.net/builds/sphinxsearch-daily/ubuntu $VERSION_NAME main" >> /etc/apt/sources.list
-fi
+sudo apt-get -y update
 
 sudo apt-get -y install sphinxsearch mysql-client mysql-server
 
 #
 # Create sphinx.conf based on project configs
 #
-echo -e "#!/bin/bash\ncat /vagrant/src/Workshop/Config/*.conf" > /etc/sphinxsearch/sphinx.conf
+if [ -f /etc/sphinxsearch/sphinx.conf ];
+then
+    sudo mv /etc/sphinxsearch/sphinx.conf /etc/sphinxsearch/sphinx_old.conf
+fi
+
+sudo ln -s /vagrant/config/sphinx.conf /etc/sphinxsearch/sphinx.conf

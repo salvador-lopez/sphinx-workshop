@@ -5,7 +5,8 @@
     "homepage": "https://github.com/salvador-lopez/sphinx-workshop",
     "type": "library",
     "require": {
-        "nilportugues/sphinx-search": "1.0.0"
+        "nilportugues/sphinx-search": "1.0.0",
+        "foolz/sphinxql-query-builder": "dev-master"
     },
     "license": "MIT",
     "authors": [
