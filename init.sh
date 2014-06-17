@@ -32,13 +32,18 @@ sudo apt-get -y install vim
 # INSTALLATION, includes libstemmer because it's the edge repo :D
 ########################################################################
 
-echo 'Installing DAILY build of SphinxSearch...'
+echo 'Installing last release of SphinxSearch...'
 
 sudo add-apt-repository ppa:builds/sphinxsearch-rel21
 
 sudo apt-get -y update
 
 sudo apt-get -y install sphinxsearch mysql-client mysql-server
+
+if [ ! -d /var/run/sphinxsearch ]
+then
+    sudo mkdir /var/run/sphinxsearch
+fi
 
 #
 # Create sphinx.conf based on project configs
