@@ -29,7 +29,7 @@ sudo mv composer.phar /usr/local/bin/composer
 sudo apt-get -y install vim
 
 ########################################################################
-# INSTALLATION, includes libstemmer because it's the edge repo :D
+# INSTALLATION
 ########################################################################
 
 echo 'Installing last release of SphinxSearch...'
