@@ -1,0 +1,16 @@
+NOTA: Resolver este ejercicio con SphinxAPI.
+
+Hacer las siguientes consultas al índice creado en el ejercicio anterior con los siguientes filtros:
+
+1- Que el campo "address_name" contenga un "1074" y no contenga la palabra "manor" o
+    que contenta exactamente las palabras "valencia place"
+    Queremos que el resultado venga ordenado por "country_name descendiente y por "city_name" ascendiente
+
+2- Que el campo "address_id" no contenga los siguientes valores: [1, 2, 3, 4, 5, 6, 7, 8, 9]
+    Sólo nos interesa recuperar los 5 primeros resultados
+    Además queremos obtener la geodistancia de cada uno de los resultados con respecto a las siguientes coordenadas:
+        latitud = 35
+        longitud = 40
+    Y queremos ordenar por dicha geodistancia de forma ascendente.
+
+    NOTA: Recordad que la longitud y latitud debeis introducirlas como float.
