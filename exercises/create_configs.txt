@@ -1,0 +1,33 @@
+Crear un indice (fichero addresses.conf) que nos permita obtener los siguientes datos:
+
+Tabla "address":
+    address_id
+    address_name
+    postal_code
+    phone
+
+Tabla "city"
+    city_id
+    lattitude
+    longitude
+
+Tabla "country"
+    country_id
+    country_name
+
+Deberemos configurar los campos para que se nos permita:
+
+- Poder hacer búsquedas fulltext por los campos:
+    address_name
+    postal_code
+    phone
+
+- Poder filtrar y ordenar por el resto de campos.
+
+EXTRA POINTS: Queremos que la query se ejecute en rangos de 400 elementos (Ej: Para obtener 900 resultados se realizará 3 veces la query)
+
+EXTRA POINTS++: Queremos que la info de conexión a base de datos esté en un source llamado "root" (en el mismo fichero)
+                y que nuestro source principal herede de él.
+
+Una vez montado el índice, comprobar por terminal que su configuración es correcta
+En caso de que todo esté OK ejecutar el comando para crear el índice y dejar el demonio escuchando
